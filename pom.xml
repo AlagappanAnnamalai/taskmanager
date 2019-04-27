@@ -26,7 +26,6 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -117,7 +116,11 @@
         <resources>
             <resource>
                 <directory>src/main/web/dist/taskmanager-ui</directory>
-                <targetPath>target/classes/static</targetPath>
+                <targetPath>static</targetPath>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <targetPath>.</targetPath>
             </resource>
         </resources>
     </build>
