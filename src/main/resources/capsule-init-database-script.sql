@@ -29,7 +29,7 @@ INSERT INTO `parent_task` (`parent_id`, `parent_task`) VALUES
 --
 
 CREATE TABLE `task` (
-  `task_id` int(11) NOT NULL AUTO_INCREMENT,
+  `task_id` int(11) NOT NULL,
   `parent_id` int(11) NOT NULL,
   `task` varchar(500) NOT NULL,
   `start_date` date NOT NULL,
@@ -51,6 +51,12 @@ ALTER TABLE `parent_task`
 ALTER TABLE `task`
   ADD PRIMARY KEY (`task_id`),
   ADD KEY `task_fk` (`parent_id`);
+
+--
+-- AUTO_INCREMENT for table `task`
+--
+ALTER TABLE `task`
+  MODIFY `task_id` int(11) NOT NULL AUTO_INCREMENT;
 
 
 --
